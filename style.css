@@ -1,3 +1,40 @@
 body {
   font-family: "Open Sans", sans-serif;
 }
+
+/* Global */
+:root {
+  /* Color */
+  --color-white: #fff;
+  --color-light-white: #eeee;
+  --color-dark-white: #bdbdbd;
+  --color-mint: #9ce4db;
+  --color-dark-mint: #01a3a4;
+  --color-black: #4d4d4d;
+  --color-dark-grey: #4d4d4d;
+  --color-grey: #616161;
+  --color-light-grey: #7c7979;
+  --color-pink: #fe918d;
+  --color-yellow: #fff7d1;
+  --color-orange: #feb546;
+  --color-black: #0000;
+
+  /* Font size */
+  --font-large: 48px;
+  --font-medium: 28px;
+  --font-regular: 18px;
+  --font-small: 16px;
+  --font-micro: 14px;
+
+  /* Font weight(Goolge Font)*/
+  --weight-bold: 700;
+  --weight-semi-bold: 600;
+  --weight-regular: 400;
+
+  /* Size */
+}
+
+/* Universal tags (공통적용) */
+* {
+  box-sizing: border-box;
+}

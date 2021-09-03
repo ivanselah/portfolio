@@ -95,7 +95,7 @@ p {
 
 #navbar {
   display: flex;
-  background-color: var(--color-mint);
+  background-color: var(--color-blue);
   justify-content: space-between;
   align-items: center;
   color: var(--color-white);
@@ -389,6 +389,10 @@ p {
 /* Testimonial */
 #testimonials {
   background-color: var(--color-light-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .testimonials {
@@ -429,4 +433,29 @@ p {
 
 .testimonial__speech-bubble a {
   color: var(--color-blue);
+}
+
+/* Contact */
+#contact {
+  background-color: var(--color-blue);
+}
+
+.contact__title,
+.contact__email,
+.contact__rights {
+  color: var(--color-white);
+}
+
+.contact__title {
+  margin: 32px;
+}
+
+.contact__links {
+  font-size: var(--font-large);
+  margin: 24px 0;
+}
+
+.contact__links i:hover {
+  transition: all var(--animation-duration) ease-in;
+  transform: scale(1.2);
 }

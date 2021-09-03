@@ -99,7 +99,7 @@ p {
   justify-content: space-between;
   align-items: center;
   color: var(--color-white);
-  padding: 15px;
+  padding: 10px;
 }
 
 .navbar__logo {
@@ -126,6 +126,15 @@ p {
 
 .navbar__menu__item:hover {
   background-color: var(--color-dark-mint);
+}
+
+.navbar__toggle-btn {
+  position: absolute;
+  top: 42px;
+  right: 32px;
+  font-size: 30px;
+  color: var(--color-white);
+  display: none;
 }
 
 /* Home */
@@ -458,4 +467,48 @@ p {
 .contact__links i:hover {
   transition: all var(--animation-duration) ease-in;
   transform: scale(1.2);
+}
+
+/* Res Mobile 최소한의 것만(최소한의 차이점만) */
+@media screen and (max-width: 768px) {
+  .navbar__toggle-btn {
+    display: block;
+    align-items: center;
+  }
+  #navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navbar__menu {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    display: none;
+  }
+
+  .about__majors {
+    flex-direction: column;
+  }
+
+  .major {
+    margin-bottom: 38px;
+  }
+
+  .skillset {
+    flex-direction: column;
+  }
+
+  .category__btn {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .project {
+    flex-grow: 1;
+  }
+
+  .testimonial__avatar {
+    width: 80px;
+    height: 80px;
+  }
 }

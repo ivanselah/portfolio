@@ -36,7 +36,7 @@ button {
   --color-dark-grey: #4d4d4d;
   --color-grey: #616161;
   --color-light-grey: #7c7979;
-  --color-blue: #0984e3;
+  --color-blue: #0fbcf9;
   --color-yellow: #fff7d1;
   --color-orange: #feb546;
   --color-black: #000000;
@@ -95,10 +95,10 @@ p {
 
 #navbar {
   display: flex;
-  background-color: var(--color-blue);
+  background-color: var(--color-white);
   justify-content: space-between;
   align-items: center;
-  color: var(--color-white);
+  color: var(--color-dark-mint);
   padding: 10px;
 }
 
@@ -109,6 +109,10 @@ p {
   font-weight: var(--weight-semi-bold);
 }
 
+.navbar__logo a {
+  color: var(--color-dark-mint);
+}
+
 .navbar__menu {
   display: flex;
 }
@@ -117,15 +121,18 @@ p {
   padding: 8px 12px;
   margin: 0 4px;
   cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: bold;
   border-radius: var(--size-border-radius);
 }
 
 .navbar__menu__item.active {
-  border: 1px solid var(--color-white);
+  border: 1px solid var(--color-dark-mint);
 }
 
 .navbar__menu__item:hover {
   background-color: var(--color-dark-mint);
+  color: var(--color-white);
 }
 
 .navbar__toggle-btn {
@@ -133,7 +140,7 @@ p {
   top: 42px;
   right: 32px;
   font-size: 30px;
-  color: var(--color-white);
+  color: var(--color-dark-mint);
   display: none;
 }
 
@@ -154,16 +161,22 @@ p {
 .home__title,
 .home__description {
   color: var(--color-white);
+  font-weight: bold;
 }
 
 .home__contact {
-  color: var(--color-white);
+  color: var(--color-dark-mint);
   font-size: var(--font-regular);
   font-weight: var(--weight-bold);
   margin: 24px;
   padding: 8px 12px;
-  border: 2px solid var(--color-white);
+  border: 2px solid var(--color-dark-mint);
   border-radius: var(--size-border-radius);
+}
+
+.home__contact:hover {
+  color: var(--color-white);
+  background-color: var(--color-dark-mint);
 }
 
 /* Section common */
@@ -301,6 +314,7 @@ p {
 }
 
 /* Work */
+
 .work__categories {
   margin: 40px;
 }
@@ -446,7 +460,7 @@ p {
 
 /* Contact */
 #contact {
-  background-color: var(--color-blue);
+  background-color: var(--color-dark-mint);
 }
 
 .contact__title,

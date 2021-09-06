@@ -112,7 +112,7 @@ p {
   background-color: transparent;
   justify-content: space-between;
   align-items: center;
-  color: var(--color-dark-mint);
+  color: var(--color-white);
   padding: 10px;
   transition: all var(--animation-duration) ease-in-out;
 }
@@ -124,9 +124,10 @@ p {
 
 #navbar.navbar--white {
   background-color: var(--color-white);
-  border-bottom: 1px solid var(--color-dark-mint);
+  border-bottom: 1px solid var(--color-passion);
+  color: var(--color-passion);
   z-index: 1;
-  padding: 5px;
+  padding: 10px;
 }
 
 .navbar__logo {
@@ -623,13 +624,25 @@ input:focus {
   .navbar__toggle-btn {
     display: block;
     align-items: center;
+    top: 4px;
     right: 13px;
   }
   #navbar {
     flex-direction: column;
     align-items: flex-start;
     background-color: var(--color-white);
+    color: var(--color-passion);
   }
+  #navbar.navbar--white .navbar__toggle-btn {
+    top: -10px;
+    right: 4px;
+    margin: 0;
+    padding: 15px;
+  }
+  .navbar__logo {
+    font-size: var(--font-small);
+  }
+
   .navbar__menu {
     flex-direction: column;
     text-align: center;

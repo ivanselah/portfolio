@@ -420,14 +420,14 @@ p {
 }
 
 .project__description h3 {
-  color: var(--color-white);
+  color: var(--color-orange);
 }
 
 .project__description h3:after {
   content: "";
   display: block;
   margin: 0 auto;
-  width: 25px;
+  width: 70px;
   height: 2px;
   margin-top: 8px;
   background-color: var(--color-dark-white);
@@ -537,12 +537,30 @@ p {
   #navbar {
     flex-direction: column;
     align-items: flex-start;
+    background-color: var(--color-white);
   }
   .navbar__menu {
     flex-direction: column;
     text-align: center;
     width: 100%;
     display: none;
+  }
+  .navbar__menu.open {
+    display: block;
+  }
+
+  #home {
+    padding-top: 150px;
+  }
+  .home__title {
+    font-size: var(--font-medium);
+  }
+  .home__description {
+    font-size: var(--font-regular);
+  }
+
+  .section {
+    padding: 16px;
   }
 
   .about__majors {

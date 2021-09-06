@@ -372,6 +372,13 @@ p {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  opacity: 1;
+  transition: all var(--animation-duration) ease-out;
+}
+
+.work__projects.anim-out {
+  opacity: 0;
+  transform: scale(0.97) translateY(40px);
 }
 
 .project {
@@ -383,6 +390,10 @@ p {
   height: 250px;
   margin: 2px;
   background-color: var(--color-light-white);
+}
+
+.project.invisible {
+  display: none;
 }
 
 .project__img {
@@ -496,6 +507,27 @@ p {
 .contact__links i:hover {
   transition: all var(--animation-duration) ease-in;
   transform: scale(1.2);
+}
+
+/* Arrow Scroll (pointer-events: none;) 하면 클릭이 안되게할 수 있음 */
+.arrow-up {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  width: 70px;
+  height: 70px;
+  font-size: 50px;
+  color: var(--color-white);
+  border-radius: 50%;
+  background-color: #a4dce8;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--animation-duration) ease-in;
+}
+
+.arrow-up.visible {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 /* Res Mobile 최소한의 것만(최소한의 차이점만) */

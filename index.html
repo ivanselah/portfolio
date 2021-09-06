@@ -54,11 +54,15 @@
         alt="IvanSelah's profile photo"
         class="home__avatar"
       />
-      <h1 class="home__title">Hello, <br />I'm Developer, Wanna Fullstack;</h1>
-      <h2 class="home__description">
-        새로운 분야를 계속 공부하고 도전하는 개발자 🔨
-      </h2>
-      <button class="home__contact">Contact Me</button>
+      <div class="home-content">
+        <h1 class="home__title">
+          Hello, <br />I'm Developer, Wanna Fullstack;
+        </h1>
+        <h2 class="home__description">
+          새로운 분야를 계속 공부하고 도전하는 개발자 🔨
+        </h2>
+        <button class="home__contact" data-link="#contact">Contact Me</button>
+      </div>
     </section>
     <!-- About -->
     <section id="about" class="section section__container">
@@ -204,14 +208,14 @@
       <h1>My work</h1>
       <h3>Projects</h3>
       <div class="work__categories">
-        <button class="category__btn active">
+        <button class="category__btn active" data-filter="*">
           All <span class="category__count">5</span></button
-        ><button class="category__btn">
+        ><button class="category__btn" data-filter="vanillajs">
           VanillaJS <span class="category__count">2</span></button
-        ><button class="category__btn">
+        ><button class="category__btn" data-filter="reactjs">
           ReactJS <span class="category__count">1</span>
         </button>
-        <button class="category__btn">
+        <button class="category__btn" data-filter="full-stack">
           Full-Stack <span class="category__count">1</span>
         </button>
       </div>
@@ -221,6 +225,7 @@
           href="https://github.com/hahmsongmin/react-movieslog"
           class="project"
           target="_blank"
+          data-type="full-stack"
         >
           <img
             class="project__img"
@@ -236,6 +241,7 @@
           href="https://github.com/hahmsongmin/ivanselah_portfoliosite_react"
           class="project"
           target="_blank"
+          data-type="reactjs"
         >
           <img
             class="project__img"
@@ -251,6 +257,7 @@
           href="https://github.com/hahmsongmin/vanillajs-todo"
           class="project"
           target="blank"
+          data-type="vanillajs"
         >
           <img
             class="project__img"
@@ -266,6 +273,7 @@
           href="https://github.com/hahmsongmin/na_html-css"
           class="project"
           target="blank"
+          data-type="vanillajs"
         >
           <img
             class="project__img"
@@ -281,6 +289,7 @@
           href="https://github.com/hahmsongmin/python_jobserach"
           class="project"
           target="blank"
+          data-type="full-stack"
         >
           <img
             class="project__img"
@@ -296,6 +305,7 @@
           href="https://github.com/hahmsongmin/python_flask_boot_login"
           class="project"
           target="blank"
+          data-type="full-stack"
         >
           <img
             class="project__img"
@@ -364,5 +374,10 @@
       </div>
       <p class="contact__rights">2021 IvanSelah - All rights reserved</p>
     </section>
+
+    <!-- Arrow up -->
+    <button class="arrow-up">
+      <i class="fas fa-arrow-up"></i>
+    </button>
   </body>
 </html>

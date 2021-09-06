@@ -36,7 +36,7 @@ button {
   --color-dark-grey: #4d4d4d;
   --color-grey: #616161;
   --color-light-grey: #7c7979;
-  --color-blue: #0fbcf9;
+  --color-passion: #ff5252;
   --color-yellow: #fff7d1;
   --color-orange: #feb546;
   --color-black: #000000;
@@ -63,6 +63,18 @@ button {
 /* Universal tags (공통적용) */
 * {
   box-sizing: border-box;
+}
+
+#about h1:after,
+#skills h1:after,
+#work h1:after {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  width: 250px;
+  height: 2px;
+  margin-top: 8px;
+  background-color: var(--color-passion);
 }
 
 /* Typography (전반적인 텍스트 스타일링) */
@@ -178,18 +190,25 @@ p {
 }
 
 .home__contact {
-  color: var(--color-dark-mint);
-  font-size: var(--font-regular);
-  font-weight: var(--weight-bold);
+  font-size: 18px;
+  width: 15%;
+  font-family: "Poppins", sans-serif;
+  color: var(--color-passion);
+  background: #fff;
+  border: 2px solid var(--color-passion);
+  padding: 8px 20px;
+  border-radius: 70px;
+  font-weight: bold;
+  transition: 0.4s ease-in-out;
   margin: 24px;
   padding: 8px 12px;
-  border: 2px solid var(--color-dark-mint);
-  border-radius: var(--size-border-radius);
 }
 
 .home__contact:hover {
-  color: var(--color-white);
-  background-color: var(--color-dark-mint);
+  box-shadow: 0px 10px 30px rgba(255, 82, 82, 0.8);
+  cursor: pointer;
+  color: #fff;
+  background: var(--color-passion);
 }
 
 /* Section common */
@@ -205,10 +224,17 @@ p {
 }
 
 /* About */
+
 .about__majors {
   display: flex;
   justify-content: space-between;
   margin: 80px 0;
+}
+
+.about__tags {
+  margin-top: 20px;
+  color: var(--color-passion);
+  font-weight: bold;
 }
 
 .major__icon {
@@ -228,7 +254,7 @@ p {
 }
 
 .major__icon:hover i {
-  color: var(--color-blue);
+  color: var(--color-passion);
   transform: rotate(-30deg) scale(1.2);
 }
 
@@ -342,7 +368,7 @@ p {
 
 .category__btn.selected,
 .category__btn:hover {
-  background-color: var(--color-blue);
+  background-color: var(--color-passion);
   color: var(--color-white);
 }
 
@@ -480,11 +506,80 @@ p {
 }
 
 .testimonial__speech-bubble a {
-  color: var(--color-blue);
+  color: var(--color-passion);
 }
 
 /* Contact */
-#contact {
+
+#conteact {
+  width: 100%;
+}
+
+.contacts-form {
+  width: 50%;
+  text-align: center;
+  margin: auto;
+}
+
+input {
+  width: 96%;
+  margin: 20px 1%;
+  background: transparent;
+  border: 0px;
+  border-bottom: 3px solid rgba(255, 82, 82, 0.5);
+  padding: 8px 10px;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  transition: 0.4s ease-in-out;
+  color: #000;
+  font-weight: bold;
+}
+textarea {
+  width: 96%;
+  margin: 20px 1%;
+  padding: 8px 10px;
+  border: 0px;
+  border-bottom: 3px solid rgba(255, 82, 82, 0.5);
+  padding: 8px 10px;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  background: transparent;
+  resize: none;
+  transition: 0.4s ease-in-out;
+  color: #000;
+  font-weight: bold;
+}
+input:focus {
+  outline: none;
+  border-bottom: 3px solid rgba(255, 82, 82, 1);
+}
+.contacts-form textarea:focus {
+  outline: none;
+  border-bottom: 3px solid rgba(255, 82, 82, 1);
+}
+
+.btn_main {
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+  color: var(--color-passion);
+  background: #fff;
+  border: 2px solid var(--color-passion);
+  padding: 8px 20px;
+  width: 50%;
+  border-radius: 80px;
+  font-weight: bold;
+  transition: 0.4s ease-in-out;
+}
+.btn_main:hover {
+  box-shadow: 0px 10px 30px rgba(255, 82, 82, 0.8);
+  cursor: pointer;
+  color: #fff;
+  background: var(--color-passion);
+}
+
+.contact-bottom {
+  text-align: center;
+  padding: 10px;
   background-color: var(--color-dark-mint);
 }
 
@@ -493,19 +588,13 @@ p {
 .contact__rights {
   color: var(--color-white);
 }
-
-.contact__title {
-  margin: 32px;
-}
-
 .contact__links {
   font-size: var(--font-large);
-  margin: 24px 0;
 }
 
 .contact__links i:hover {
   transition: all var(--animation-duration) ease-in;
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 /* Arrow Scroll (pointer-events: none;) 하면 클릭이 안되게할 수 있음 */
@@ -518,7 +607,7 @@ p {
   font-size: 50px;
   color: var(--color-white);
   border-radius: 50%;
-  background-color: #a4dce8;
+  background-color: var(--color-passion);
   opacity: 0;
   pointer-events: none;
   transition: opacity var(--animation-duration) ease-in;
@@ -560,6 +649,9 @@ p {
   .home__description {
     font-size: var(--font-regular);
   }
+  .home__contact {
+    width: 40%;
+  }
 
   .section {
     padding: 16px;
@@ -599,6 +691,12 @@ p {
   .testimonial__avatar {
     width: 80px;
     height: 80px;
+  }
+
+  .contacts-form {
+    width: 100%;
+    text-align: center;
+    margin: auto;
   }
 
   .arrow-up {

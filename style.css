@@ -337,6 +337,7 @@ p {
   border-radius: var(--size-border-radius);
   font-size: var(--font-regular);
   padding: 8px 48px;
+  position: relative;
 }
 
 .category__btn.selected,
@@ -359,9 +360,9 @@ p {
   height: 24px;
   display: inline-block;
   line-height: 24px;
-  position: relative;
+  position: absolute;
   top: -20px;
-  left: 4px;
+  right: 20px;
   opacity: 0;
   transition: all var(--animation-duration);
 }
@@ -533,6 +534,7 @@ p {
   .navbar__toggle-btn {
     display: block;
     align-items: center;
+    right: 13px;
   }
   #navbar {
     flex-direction: column;
@@ -561,10 +563,12 @@ p {
 
   .section {
     padding: 16px;
+    padding-top: 100px;
   }
 
   .about__majors {
     flex-direction: column;
+    margin-bottom: 0;
   }
 
   .major {
@@ -573,6 +577,14 @@ p {
 
   .skillset {
     flex-direction: column;
+  }
+
+  .skillset__left {
+    padding: 20px 10px;
+  }
+
+  .etc {
+    margin-top: 0;
   }
 
   .category__btn {

@@ -94,12 +94,26 @@ p {
 /* Navbar */
 
 #navbar {
+  position: fixed;
+  width: 100%;
   display: flex;
-  background-color: var(--color-white);
+  background-color: transparent;
   justify-content: space-between;
   align-items: center;
   color: var(--color-dark-mint);
   padding: 10px;
+  transition: all var(--animation-duration) ease-in-out;
+}
+
+/* navbar--white 라고만 해놓으면 #navbar에 
+  스타일링이 되어져 있는 투명한 백그라운드 색상이 우선
+왜냐? 아이디 선택자가 클래스 선택자 보다 더 우위 
+클래스는 동일한 클래스랄 가진 아이들 모두에게 적용이 되는 개념이라 아이디 선택자로 스타일링 된것이 클래스 선택자로 스타일링한 아이들을 덮어 씌움 */
+
+#navbar.navbar--white {
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-dark-mint);
+  padding: 5px;
 }
 
 .navbar__logo {
@@ -147,7 +161,7 @@ p {
 /* Home */
 #home {
   background: url("imgs/background.png") center/cover no-repeat;
-  padding: 40px;
+  padding-top: 100px;
   text-align: center;
 }
 

@@ -92,3 +92,69 @@ workBtnContainer.addEventListener("click", (event) => {
     projectContainer.classList.remove("anim-out");
   }, 300);
 });
+
+// when handle scrolling, active the navbar menu according to section.
+// const sections = document.querySelectorAll("section");
+
+// const options = {
+//   root: null, // viewport, container 로 변경 가능
+//   rootMargin: "0px", // initial 0px, Margin값을 포함한 viewport 계산
+//   threshold: 0, // 얼마만큼 보여져야 callback함수 호출할지 결정 0 ~ 1
+// };
+
+// const callback = (entries, observer) => {
+//   console.log(entries, observer);
+// };
+
+// const observer = new IntersectionObserver(callback, options);
+
+// sections.forEach((section) => observer.observe(section));
+
+// 1. 모든 섹션 요소들을 가지고 온다.
+// 2. IntersectionObserver를 이용해서 모든 섹션들을 관찰한다.
+// 3. 보여지는 색션에 해당하는 메뉴 아이템을 활성화 시킨다.
+
+const sectionIds = ["#home", "#about", "#skills", "#work", "#contact"];
+
+const sections = sectionIds.map((item) => document.querySelector(item));
+const navItems = sectionIds.map((item) =>
+  document.querySelector(`[data-link="${item}"]`)
+);
+
+const observerOptions = {
+  root: null,
+  rootMargin: "0px",
+  threshold: 0.8,
+};
+
+let selectedNavIndex = 0;
+let selectedNavItem = navItems[0];
+
+function selectNavItem(selected) {
+  selectedNavItem.classList.remove("active");
+  selectedNavItem = navItems[selected];
+  selectedNavItem.classList.add("active");
+}
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY === 0) {
+    selectNavItem(0);
+  }
+});
+
+const observerCallback = (entries, observer) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting && entry.intersectionRatio > 0) {
+      const index = sectionIds.indexOf(`#${entry.target.id}`);
+      if (entry.boundingClientRect.y < 0) {
+        selectedNavIndex = index + 1;
+      } else {
+        selectedNavIndex = index - 1;
+      }
+      selectNavItem(selectedNavIndex);
+    }
+  });
+};
+
+const observer = new IntersectionObserver(observerCallback, observerOptions);
+sections.forEach((section) => observer.observe(section));

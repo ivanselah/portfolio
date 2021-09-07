@@ -157,6 +157,11 @@ p {
   border-radius: var(--size-border-radius);
 }
 
+.navbar__menu__item.active {
+  background-color: var(--color-passion);
+  color: var(--color-white);
+}
+
 .navbar__menu__item:hover {
   border: 1px solid var(--color-white);
   background-color: var(--color-passion);

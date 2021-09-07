@@ -11,11 +11,6 @@ document.addEventListener("scroll", () => {
   }
 });
 
-function scrollIntoView(selector) {
-  const scrollTo = document.querySelector(selector);
-  scrollTo.scrollIntoView({ behavior: "smooth" });
-}
-
 // Handle scrolling when tapping on the navbar menu
 const navbarMenu = document.querySelector(".navbar__menu");
 navbarMenu.addEventListener("click", (event) => {
@@ -121,10 +116,16 @@ const navItems = sectionIds.map((item) =>
   document.querySelector(`[data-link="${item}"]`)
 );
 
+function scrollIntoView(selector) {
+  const scrollTo = document.querySelector(selector);
+  scrollTo.scrollIntoView({ behavior: "smooth" });
+  selectNavItem(navItems[sectionIds.indexOf(selector)]);
+}
+
 const observerOptions = {
   root: null,
   rootMargin: "0px",
-  threshold: 0.8,
+  threshold: 0.7,
 };
 
 let selectedNavIndex = 0;
@@ -132,15 +133,9 @@ let selectedNavItem = navItems[0];
 
 function selectNavItem(selected) {
   selectedNavItem.classList.remove("active");
-  selectedNavItem = navItems[selected];
+  selectedNavItem = selected;
   selectedNavItem.classList.add("active");
 }
-
-window.addEventListener("scroll", () => {
-  if (window.scrollY === 0) {
-    selectNavItem(0);
-  }
-});
 
 const observerCallback = (entries, observer) => {
   entries.forEach((entry) => {
@@ -151,10 +146,24 @@ const observerCallback = (entries, observer) => {
       } else {
         selectedNavIndex = index - 1;
       }
-      selectNavItem(selectedNavIndex);
+      selectNavItem(navItems[selectedNavIndex]);
     }
   });
 };
 
 const observer = new IntersectionObserver(observerCallback, observerOptions);
 sections.forEach((section) => observer.observe(section));
+
+// wheel 사용자가 진짜 스크롤할때, 유저가 클릭했을때 scroll 자체에서 발생하는 이벤트
+window.addEventListener("wheel", () => {
+  if (window.scrollY === 0) {
+    selectedNavIndex = 0;
+    // 스크롤이 젤 끝에 도달했다면
+  } else if (
+    window.scrollY + window.innerHeight >=
+    document.body.clientHeight
+  ) {
+    selectedNavIndex = navItems.length - 1;
+  }
+  selectNavItem(navItems[selectedNavIndex]);
+});
